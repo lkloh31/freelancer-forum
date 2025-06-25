@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 1ch;
+  background-color: #f3f3f3;
+}
+
+h1 {
+  text-align: center;
+  padding: 1ch;
+}
+
+.average-rate {
+  text-align: center;
+  padding: 1ch;
+}
+
+.container {
+  width: 100%;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th,
+td {
+  border: 1px solid #cf1616;
+  padding: 1ch;
+  text-align: left;
+}
+
+th {
+  background-color: #d9b2b2;
+  font-weight: bold;
+  text-align: center;
+}
+
+.freelancer-rows {
+  width: 100%;
+  padding: 1ch;
+}
