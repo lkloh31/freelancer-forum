@@ -9,18 +9,14 @@ body {
   background-color: #f3f3f3;
 }
 
-h1 {
-  text-align: center;
-  padding: 1ch;
-}
-
+h1,
 .average-rate {
   text-align: center;
   padding: 1ch;
 }
 
-.container {
-  width: 100%;
+.average-rate {
+  font-size: small;
 }
 
 table {
@@ -39,9 +35,4 @@ th {
   background-color: #d9b2b2;
   font-weight: bold;
   text-align: center;
-}
-
-.freelancer-rows {
-  width: 100%;
-  padding: 1ch;
 }

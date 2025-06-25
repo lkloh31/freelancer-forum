@@ -22,8 +22,10 @@ function createFreelancer() {
 
   return { name, occupation, price };
 }
+
 // -------------------------------------------------------------------
 const freelancers = Array.from({ length: NUM_FREELANCERS }, createFreelancer);
+
 // -------------------------------------------------------------------
 function getAverageRate(list) {
   const priceArr = list.map((item) => item.price);
@@ -31,10 +33,12 @@ function getAverageRate(list) {
     priceArr.reduce(
       (accumulator, currentValue) => accumulator + currentValue,
       0
-    ) / NUM_FREELANCERS;
+    ) / list.length;
   return averagePrice;
 }
+
 const averageRate = getAverageRate(freelancers);
+
 // -------------------------------------------------------------------
 function FreelancerRow(freelancer) {
   const { name, occupation, price } = freelancer;
@@ -47,6 +51,7 @@ function FreelancerRow(freelancer) {
   `;
   return $row;
 }
+
 // -------------------------------------------------------------------
 function FreelancerRows() {
   const $tbody = document.createElement("tbody");
@@ -57,6 +62,7 @@ function FreelancerRows() {
 
   return $tbody;
 }
+
 // -------------------------------------------------------------------
 function AverageRateDisplay() {
   const $average = document.createElement("span");
@@ -66,13 +72,14 @@ function AverageRateDisplay() {
   `;
   return $average;
 }
+
 // -------------------------------------------------------------------
 function render() {
   const $app = document.querySelector("#app");
 
   $app.innerHTML = `
     <h1>Freelancer Forum</h1>
-    <AverageRateDisplay></AverageRateDisplay>
+    <h3 class="average-rate-display"></h3>
     <table class="container">
       <thead>
         <tr>
@@ -81,12 +88,12 @@ function render() {
           <th>Rate</th>
         </tr>
       </thead>
-      
+      <tbody class="freelancer-rows"></tbody>
     </table>
-    <FreelancerRows></FreelancerRows>
   `;
 
-  $app.querySelector("AverageRateDisplay").replaceWith(AverageRateDisplay());
-  $app.querySelector("FreelancerRows").replaceWith(FreelancerRows());
+  $app.querySelector(".average-rate-display").replaceWith(AverageRateDisplay());
+  $app.querySelector(".freelancer-rows").replaceWith(FreelancerRows());
 }
+
 render();
